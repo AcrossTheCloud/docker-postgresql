@@ -1,4 +1,4 @@
-## MongoDB Dockerfile
+## PostgresSQL Dockerfile
 
 
 This repository contains **Dockerfile** of [PostgreSQL](https://www.postgresql.org/) for [Docker](https://www.docker.com/).
