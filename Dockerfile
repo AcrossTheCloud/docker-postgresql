@@ -14,7 +14,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" > /etc/
 # Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL
 #  There are some warnings (in red) that show up during the build. You can hide
 #  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y python-software-properties software-properties-common postgresql-10 postgresql-client-10 postgresql-contrib-10 postgresql-10-postgis-2.4 postgis
+RUN apt-get update && apt-get install -y python-software-properties software-properties-common postgresql-10 postgresql-client-10 postgresql-contrib-10 postgresql-10-postgis-2.4 postgresql-10-pgrouting postgis
 
 # Note: The official Debian and Ubuntu images automatically ``apt-get clean``
 # after each ``apt-get``
