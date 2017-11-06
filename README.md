@@ -18,6 +18,6 @@ docker build -t="yourdockerusername/postgresql" github.com/acrossthecloud/postgr
 
     docker run -d -p 27017:27017 --name postgresql matthewberryman/postgresql
 
-#### Run `mongod` w/ persistent database directory
+#### Run `postgresql` w/ persistent database directory
 
     docker run -d -p 27017:27017 -v <db-dir>:/var/lib/postgresql --name postgresql matthewberryman/postgresql
