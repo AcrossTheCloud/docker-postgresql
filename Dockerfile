@@ -18,9 +18,6 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97
 # Add PostgreSQL's repository.
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
-# Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL
-#  There are some warnings (in red) that show up during the build. You can hide
-#  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-10 postgresql-client-10 postgresql-contrib-10 postgresql-10-postgis-2.4 postgresql-10-pgrouting postgis
 
 # Note: The official Debian and Ubuntu images automatically ``apt-get clean``
