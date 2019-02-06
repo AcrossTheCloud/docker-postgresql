@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y software-properties-common
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
 # It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc
+# First disable some issues whereby gpg gets confused regarding IPv6
+RUN mkdir ~/.gnupg
+RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
 
 RUN set -ex \
   && for key in \
