@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y software-properties-common gnupg
 # First disable some issues whereby gpg gets confused regarding IPv6
 RUN mkdir ~/.gnupg
 RUN echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf
+RUN chmod -R go-rwx ~/.gnupg
 
 RUN set -ex \
   && for key in \
