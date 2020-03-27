@@ -2,12 +2,12 @@
 # example Dockerfile for https://docs.docker.com/examples/postgresql_service/
 #
 
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 # Use fast mirror
-RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse" > /etc/apt/sources.list && \
-    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
-    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb mirror://mirrors.ubuntu.com/mirrors.txt focal main restricted universe multiverse" > /etc/apt/sources.list && \
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt focal-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb mirror://mirrors.ubuntu.com/mirrors.txt focal-security main restricted universe multiverse" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y software-properties-common gnupg
 
@@ -28,7 +28,7 @@ RUN set -ex \
   done
 
 # Add PostgreSQL's repository.
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-12 postgresql-client-12 postgresql-contrib-12 postgresql-12-postgis-3 postgresql-12-postgis-3-scripts postgresql-12-pgrouting
 
